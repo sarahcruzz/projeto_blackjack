@@ -81,16 +81,9 @@ class Jogar():
 
     
         
-
-        
 jogar = Jogar()
 jogar.iniciarJogo()
             
 
    
-            
-       
-
-
-
 # FIM DA CLASSE JOGAR 
