@@ -1,1 +1,1 @@
-Projeto Game BlackJack utilizando conceitos de POO
+Projeto Game BlackJack utilizando conceitos de POO - em desenvolvimento 
