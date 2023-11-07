@@ -12,12 +12,12 @@ class Dealer:
         for i in distribuicao:
             jogador.setCartas(distribuicao)
             self.cartas.remove(i)
-        print(f"Cartas do jogador: {jogador.getCartas()}")
+        print(f"\nCartas do jogador: {jogador.getCartas()}")
         print(f"Soma: {sum(jogador.getCartas())}\n")
         jogador.pontos = sum(jogador.getCartas())
 
             
-    def distribuirMaisCartas(self):
+    def distribuirMaisCartas(self, jogador):
         distribuicao = random.sample(self.cartas, 1)
         for i in distribuicao:
             jogador.getCartas.append(i)
@@ -72,8 +72,10 @@ class Jogar():
                     jogadores.append(jogador)
                     print(f"Pontuação: {jogadores[i].pontos}, Nome: {jogadores[i].nome}")
 
-                    compra = input("Gostaria de comprar mais uma carta? (H)it (S)tand ").upper
+                    compra = input("Gostaria de comprar mais uma carta? (H)it (S)tand \nR: ")
                     while compra == "H":
+                        
+                        compra = input("Comprar mais uma carta ou Parar? (H)it (S)tand \nR: ")
                         
 
                 else:
@@ -83,8 +85,7 @@ class Jogar():
         else:
             print("bye bye")
             exit()
-        
-        def 
+    
 
 
 jogar = Jogar()
