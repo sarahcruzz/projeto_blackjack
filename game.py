@@ -73,10 +73,8 @@ class Jogar():
                     print(f"Pontuação: {jogadores[i].pontos}, Nome: {jogadores[i].nome}")
 
                     compra = input("Gostaria de comprar mais uma carta? (H)it (S)tand \nR: ")
-                    while compra == "H":
-                        
-                        compra = input("Comprar mais uma carta ou Parar? (H)it (S)tand \nR: ")
-                        
+                    
+                                        
 
                 else:
                     print("Você não possui idade suficiente para jogar!")
