@@ -27,7 +27,7 @@ class Dealer:
 
 # FIM DA CLASSE DEALER
 
-nome_dealer = "Derek"
+nome_dealer = input("Insira a identificação do dealer: ")
 dealer = Dealer(nome_dealer)
 
 
