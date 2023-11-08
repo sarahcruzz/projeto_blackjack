@@ -7,22 +7,20 @@ class Dealer:
         self.cartas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] # Cartas do Baralho
         self.identificacao = identificacao
 
-    def cartasIniciais(self, jogador):       
-        distribuicao = random.sample(self.cartas, 2)
-        for i in distribuicao:
-            jogador.setCartas(distribuicao)
-            self.cartas.remove(i)
-        print(f"\nCartas do jogador: {jogador.getCartas()}")
-        print(f"Soma: {sum(jogador.getCartas())}\n")
-        jogador.pontos = sum(jogador.getCartas())
+    def distribuirCartas(self, jogador):
+        carta = random.sample(self.cartas, 2)
+        for i in carta:
+            jogador.cartas_jogador.append(carta)
+            self.cartas.remove(carta)
+        print(f"\nCartas do Jogador: {jogador.cartas_jogador}")
+        print(f"Soma: {sum(jogador.cartas_jogador)}")
 
-            
-    def distribuirMaisCartas(self, jogador):
-        distribuicao = random.sample(self.cartas, 1)
-        for i in distribuicao:
-            jogador.getCartas.append(i)
-            self.cartas.remove(i)
-        print(self.cartas_jogador)
+    def compraCarta(self, jogador):
+        carta = random.sample(self.cartas, 1)
+        jogador.cartas_jogador.append(carta)
+        self.cartas.remove(carta)
+        print(f"\nCartas do Jogador: {jogador.cartas_jogador}")
+        print(f"Soma: {sum(jogador.cartas_jogador)}")
         
 
 # FIM DA CLASSE DEALER
@@ -37,13 +35,13 @@ class Jogador():
         self.nome = nome
         self.idade = idade
         self.pontos = 0
-        self.__cartas_jogador = []
+        self.cartas_jogador = []
 
-    def setCartas(self, cartas):
-        self.__cartas_jogador = cartas
+    # def setCartas(self, cartas):
+    #     self.__cartas_jogador = cartas
 
-    def getCartas(self):
-        return self.__cartas_jogador
+    # def getCartas(self):
+    #     return self.__cartas_jogador
         
 # FIM DA CLASSE JOGADOR
 jogadores = []
@@ -68,13 +66,15 @@ class Jogar():
 
                 if idade_jogador >= 18:
                     jogador = Jogador(nome_jogador, idade_jogador)
-                    dealer.cartasIniciais(jogador)
+                    dealer.distribuirCartas(jogador)
                     jogadores.append(jogador)
-                    print(f"Pontuação: {jogadores[i].pontos}, Nome: {jogadores[i].nome}")
+                
+                compra = int(input("\n1 - comprar \n2 - parar \nO que gostaria de fazer? "))
 
-                    compra = input("Gostaria de comprar mais uma carta? (H)it (S)tand \nR: ")
+                while compra == 1:
+                    dealer.compraCarta(jogador)
+
                     
-                                        
 
                 else:
                     print("Você não possui idade suficiente para jogar!")
