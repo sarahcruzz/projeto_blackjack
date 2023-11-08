@@ -69,10 +69,12 @@ class Jogar():
                     dealer.distribuirCartas(jogador)
                     jogadores.append(jogador)
                 
-                compra = int(input("\n1 - comprar \n2 - parar \nO que gostaria de fazer? "))
+                    compra = int(input("\n1 - comprar \n2 - parar \nO que gostaria de fazer? "))
 
-                while compra == 1:
-                    dealer.compraCarta(jogador)
+                    while compra == 1:
+                        dealer.compraCarta(jogador)
+                    else:
+                        print("O jogador parou")
 
                     
 
